@@ -7,7 +7,6 @@
 <body>
 <h1><%= "Hello World!" %>
 </h1>
-<p>2022211001000522 YuWei</p>
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 </body>
