@@ -28,12 +28,39 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:4.0.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-api:5.7.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.opentest4j:opentest4j:1.2.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-commons:1.7.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.7.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.7.0" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://D:/JDBC/sqljdbc_12.4.2.0_enu/sqljdbc_12.4/enu/samples/adaptive" />
+          <root url="file://D:/JDBC/sqljdbc_12.4.2.0_enu/sqljdbc_12.4/enu/samples/alwaysencrypted" />
+          <root url="file://D:/JDBC/sqljdbc_12.4.2.0_enu/sqljdbc_12.4/enu/samples/azureactivedirectoryauthentication" />
+          <root url="file://D:/JDBC/sqljdbc_12.4.2.0_enu/sqljdbc_12.4/enu/samples/connections" />
+          <root url="file://D:/JDBC/sqljdbc_12.4.2.0_enu/sqljdbc_12.4/enu/samples/constrained" />
+          <root url="file://D:/JDBC/sqljdbc_12.4.2.0_enu/sqljdbc_12.4/enu/samples/dataclassification" />
+          <root url="file://D:/JDBC/sqljdbc_12.4.2.0_enu/sqljdbc_12.4/enu/samples/datatypes" />
+          <root url="file://D:/JDBC/sqljdbc_12.4.2.0_enu/sqljdbc_12.4/enu/samples/resultsets" />
+          <root url="file://D:/JDBC/sqljdbc_12.4.2.0_enu/sqljdbc_12.4/enu/samples/sparse" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://D:/学习资料/sqljdbc_12.6.1.0_chs/sqljdbc_12.6/chs/jars/mssql-jdbc-12.6.1.jre8.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" exported="" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:4.0.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-api:5.7.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="Maven: org.opentest4j:opentest4j:1.2.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="Maven: org.junit.platform:junit-platform-commons:1.7.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.7.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.7.0" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.microsoft.sqlserver:mssql-jdbc:8.4.1.jre8" level="project" />
   </component>
 </module>

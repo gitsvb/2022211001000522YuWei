@@ -11,29 +11,34 @@
             <servlet-name>Week2Homework1</servlet-name>
             <url-pattern>/hello</url-pattern>
         </servlet-mapping>
+        <!--
+         <servlet>
+            <servlet-name>RegisterServlet</servlet-name>
+            <servlet-class>Week3homework.RegisterServlet</servlet-class>
+        </servlet>
         <servlet-mapping>
-            <servlet-name>default</servlet-name>
-            <url-pattern>*.css</url-pattern>
+            <servlet-name>RegisterServlet</servlet-name>
+            <url-pattern>/register</url-pattern>
         </servlet-mapping>
-        <servlet-mapping>
-            <servlet-name>default</servlet-name>
-            <url-pattern>*.js</url-pattern>
-        </servlet-mapping>
-        <servlet-mapping>
-            <servlet-name>default</servlet-name>
-            <url-pattern>*.ico</url-pattern>
-        </servlet-mapping>
-        <servlet-mapping>
-             <servlet-name>default</servlet-name>
-            <url-pattern>*.jpg</url-pattern>
-        </servlet-mapping>
-        <servlet-mapping>
-            <servlet-name>default</servlet-name>
-            <url-pattern>*.png</url-pattern>
-        </servlet-mapping>
-        <servlet-mapping>
-            <servlet-name>default</servlet-name>
-            <url-pattern>*.gif</url-pattern>
-        </servlet-mapping>
+        -->
+        <context-param>
+            <param-name>drivername</param-name>
+            <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
+        </context-param>
+        <context-param>
+            <param-name>url</param-name>
+            <param-value>jdbc:sqlserver://localhost;DatabaseName=userdb;encrypt=false;</param-value>
+        </context-param>
+        <context-param>
+            <param-name>username</param-name>
+            <param-value>sa</param-value>
+        </context-param>
+        <context-param>
+            <param-name>password</param-name>
+            <param-value>123456</param-value>
+        </context-param>
+
+        
+
 
 </web-app>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.micorsoft.sqlserver.jdbc:mssql-jd:12.6.1.jre8">
+    <CLASSES>
+      <root url="jar://D:/学习资料/sqljdbc_12.6.1.0_chs/sqljdbc_12.6/chs/jars/mssql-jdbc-12.6.1.jre8.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://D:/JDBC/sqljdbc_12.4.2.0_enu/sqljdbc_12.4/enu/jars/mssql-jdbc-12.4.2.jre8-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://D:/学习资料/sqljdbc_12.6.1.0_chs/sqljdbc_12.6/chs/jars/mssql-jdbc-12.6.1.jre8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -15,19 +15,6 @@
             }
 
         }
-        var fid = document.getElementById('fid');
-        var mid = document.getElementById('mid');
-
-        fid.addEventListener("mouseclick",c_gender_f)
-        mid.addEventListener("mouseclick",c_gender_m)
-        function c_gender_f() {
-                fid.checked = 'true';
-                mid.checked = 'false';
-        }
-        function c_gender_m(){
-                mid.checked = 'true';
-                fid.checked = 'false';
-        }
 
         function validateInput() {
             var input = document.getElementById("dateInput").value;
@@ -42,14 +29,14 @@
 
                 var date = new Date(year, month, day);
                 if (date.getDate() === day && date.getMonth() === month && date.getFullYear() === year) {
-                    alert("输入日期格式正确！");
+                    alert("Right！");
                 } else {
-                    alert("输入日期格式不正确！");
+                    alert("Wrong！");
                 }
             } else {
-                alert("输入日期格式不正确！");
+                alert("Wrong！");
             }
-        }
+
         }
     </script>
 
@@ -66,7 +53,7 @@
             background: linear-gradient(#141e30,#243b55);
         }
 
-        uL{
+        ul{
             display:flex;
             list-style:none
         }
@@ -97,13 +84,14 @@
             height:30px;
         }
     </style>
+    </style>
 </head>
 <body>
    <div id="container1">
-       <form id="register">
+       <form id="register" action="/2022211001000522YuWei_war_exploded/register" method="post">
            <div class="r-input">
-               <label  >Name</label><br>
-               <input Type="text" ><br>
+               <label>username</label><br>
+               <input Type="text" name="username"><br>
            </div>
            <div class="r-input">
                <label >Password</label><br>
@@ -112,24 +100,24 @@
            </div>
            <div class="r-input">
                <label >Email</label><br>
-               <input Type="text"><br>
+               <input Type="text" name="email"><br>
 
            </div>
            <div class="r-gender">
                <label>Gender</label><br>
                <ul >
 
-                   <li><input  type="radio" value="male"id="mid" checked="true" ><label>male</label></li>
-                   <li><input  type="radio"  value="female" id="fid"/><label>female</label></li>
+                   <li><input  type="radio" value="male" name="gender" checked="true" ><label>male</label></li>
+                   <li><input  type="radio"  value="female" name="gender"/><label>female</label></li>
                </ul>
 
            </div>
            <div class="r-input">
-               <input Type="submit" id="submit" value="register" onclick="validateInput()"><br>
+               <input Type="submit" name="submit" value="register" onclick="validateInput()"><br>
            </div>
            <div class="r-input">
-               <label>Brithday</label><br>
-               <input Type="text" id="brithday" placeholder="dd/mm/yyyy" required>
+               <label>Brithdate</label><br>
+               <input Type="text" name="brithdate" placeholder="dd/mm/yyyy" required>
            </div>
 
        </form>
