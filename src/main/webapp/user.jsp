@@ -10,9 +10,10 @@
 <html>
 <head>
     <title>User</title>
+
 </head>
 <body>
-    <table>
+    <table border="1">
         <thead>
             <tr>
                 <th>username</th>
@@ -28,10 +29,10 @@
             for (user User : list) {
         %>
             <tr>
-                <td><%=User.getUsername()%>></td>
-                <td><%=User.getPassword()%>></td>
+                <td><%=User.getUsername()%></td>
+                <td><%=User.getPassword()%></td>
                 <td><%=User.getEmail()%></td>
-                <td><%=User.getGender()%>></td>
+                <td><%=User.getGender()%></td>
                 <td><%=User.getBrithdate()%></td>
             </tr>
         <%

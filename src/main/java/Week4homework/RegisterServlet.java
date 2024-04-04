@@ -16,9 +16,9 @@ import java.util.ArrayList;
 @WebServlet(
         urlPatterns = {"/register"}
 )
-public class RegisterServlet extends HttpServlet {
-    public Connection con = null;
-    public void init(){
+public class RegisterServlet extends HttpServlet{
+    Connection con;
+    public void init()throws ServletException{
         ServletContext context = getServletConfig().getServletContext();
         String drivername = context.getInitParameter("drivername");
         String url = context.getInitParameter("url");
@@ -41,7 +41,7 @@ public class RegisterServlet extends HttpServlet {
     }
 
     @Override
-    protected  void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected  void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
@@ -93,7 +93,9 @@ public class RegisterServlet extends HttpServlet {
         }catch (SQLException e){
             e.printStackTrace();
         }
-        request.setAttribute("list",list);
-        request.getRequestDispatcher("/user.jsp").forward(request,response);
+
+        /*request.setAttribute("list",list);
+        request.getRequestDispatcher("/user.jsp").forward(request,response);*/
+        request.getRequestDispatcher("/login.jsp");
     }
 }

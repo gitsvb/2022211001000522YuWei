@@ -11,6 +11,29 @@
             <servlet-name>Week2Homework1</servlet-name>
             <url-pattern>/hello</url-pattern>
         </servlet-mapping>
+
+
+<!--
+         <servlet>
+            <servlet-name>Config</servlet-name>
+            <servlet-class>Week4homework.ConfigDemoServlet</servlet-class>
+
+            <init-param>
+                <param-name>name</param-name>
+                <param-value>Yu Wei</param-value>
+            </init-param>
+
+            <init-param>
+                <param-name>studentId</param-name>
+                <param-value>2022211001000522</param-value>
+            </init-param>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>Config</servlet-name>
+            <url-pattern>/config</url-pattern>
+        </servlet-mapping>
+
+        -->
         <!--
          <servlet>
             <servlet-name>RegisterServlet</servlet-name>
@@ -38,7 +61,7 @@
             <param-value>123456</param-value>
         </context-param>
 
-        
+
 
 
 </web-app>
