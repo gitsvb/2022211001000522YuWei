@@ -77,6 +77,10 @@
 </head>
 <body>
 <%@include file="header.jsp"%>
+<%
+if(!(request.getAttribute("message")==null)){
+    out.print("<h3>"+request.getAttribute("message")+"</h3>");
+}%>
 <div class="container">
     <div class="login-wrapper">
         <div class="header">Login</div>
