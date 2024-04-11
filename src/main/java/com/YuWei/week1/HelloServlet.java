@@ -1,4 +1,4 @@
-package com.example.YuWei2022211001000522;
+package com.YuWei.week1;
 
 import java.io.*;
 import javax.servlet.http.*;

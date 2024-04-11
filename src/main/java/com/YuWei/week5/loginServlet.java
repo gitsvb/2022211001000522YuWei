@@ -1,24 +1,29 @@
-package Week3homework;
+package com.YuWei.week5;
+
+import com.YuWei.week4.user;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 import java.util.ArrayList;
 
-
-public class RegisterServlet extends HttpServlet {
+@WebServlet(
+        urlPatterns = {"/login"}
+)
+public class loginServlet extends HttpServlet {
     public Connection con = null;
-    public void init(){
+
+
+    public void init()throws ServletException{
         ServletContext context = getServletConfig().getServletContext();
         String drivername = context.getInitParameter("drivername");
         String url = context.getInitParameter("url");
         String username = context.getInitParameter("username");
         String password = context.getInitParameter("password");
         try{
-
             Class.forName(drivername);
             Connection con = DriverManager.getConnection(url,username,password);
             System.out.println("-->connection"+con);
@@ -35,41 +40,9 @@ public class RegisterServlet extends HttpServlet {
     }
 
     @Override
-    protected  void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String email = request.getParameter("email");
-        String gender = request.getParameter("gender");
-        String brithdate = request.getParameter("brithdate");
-        PrintWriter writer = response.getWriter();
-        //writer.println("username:"+username);
-        //writer.println("password:"+password);
-        //writer.println("email:"+email);
-        //writer.println("gender:"+gender);
-        //writer.println("brithdate"+brithdate);
-        //writer.close();
-
-        //Insert!
-        try{
-            String sql = "insert into tb_user values(?,?,?,?,?)";
-            PreparedStatement statement = con.prepareStatement(sql);
-            statement.setString(1,username);
-            statement.setString(2,password);
-            statement.setString(3,gender);
-            statement.setString(4,email);
-            statement.setString(5,brithdate);
-            if(statement.executeUpdate()>0){
-                System.out.println("insert successfully");
-            }
-            else{
-                System.out.println("fail");
-            }
-            statement.close();
-
-        }catch(SQLException e){
-            e.printStackTrace();
-        }
-        //Print out!
         ArrayList<user> list = new ArrayList<>();
         String sql2 = "Select * from tb_user";
         try{
@@ -87,7 +60,34 @@ public class RegisterServlet extends HttpServlet {
         }catch (SQLException e){
             e.printStackTrace();
         }
-        request.setAttribute("list",list);
-        request.getRequestDispatcher("/user.jsp").forward(request,response);
+
+      try{
+          String sql ="Select * from tb_user where username = ? "+"and password = ?";
+          PreparedStatement stat = con.prepareStatement(sql);
+          stat.setString(1,username);
+          stat.setString(2,password);
+          ResultSet rs = stat.executeQuery();
+          PrintWriter writer = response.getWriter();
+
+          if(rs.next()){
+              /*writer.println("<html><body>");
+              writer.println("<h1>Login Success!!!</h1>");
+              writer.println("<h2>Welcome:<h2>"+username);
+              writer.println("</body></html>");*/
+              request.setAttribute("list",list);
+              request.getRequestDispatcher("user.jsp").forward(request,response);
+          }
+          else{
+              response.sendRedirect("login.jsp");
+             /* writer.println("<html><body>");
+              writer.println("<h1>Login Error!!!</h1>");
+              writer.println("</body></html>");*/
+          }
+          writer.close();
+
+      }catch(SQLException e){
+          e.printStackTrace();
+      }
+
     }
 }

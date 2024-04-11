@@ -1,30 +1,23 @@
-package Week4homework;
+package com.YuWei.week3;
 
-import Week3homework.user;
-
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 import java.util.ArrayList;
 
-@WebServlet(
-        urlPatterns = {"/register"}
-)
-public class RegisterServlet extends HttpServlet{
-    Connection con;
-    public void init()throws ServletException{
+
+public class RegisterServlet extends HttpServlet {
+    public Connection con = null;
+    public void init(){
         ServletContext context = getServletConfig().getServletContext();
         String drivername = context.getInitParameter("drivername");
         String url = context.getInitParameter("url");
         String username = context.getInitParameter("username");
         String password = context.getInitParameter("password");
         try{
+
             Class.forName(drivername);
             Connection con = DriverManager.getConnection(url,username,password);
             System.out.println("-->connection"+con);
@@ -41,7 +34,7 @@ public class RegisterServlet extends HttpServlet{
     }
 
     @Override
-    protected  void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
+    protected  void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
@@ -76,7 +69,7 @@ public class RegisterServlet extends HttpServlet{
             e.printStackTrace();
         }
         //Print out!
-        ArrayList<Week3homework.user> list = new ArrayList<>();
+        ArrayList<user> list = new ArrayList<>();
         String sql2 = "Select * from tb_user";
         try{
             Statement statement = con.createStatement();
@@ -87,15 +80,13 @@ public class RegisterServlet extends HttpServlet{
                 String Gender = result.getString("gender");
                 String Email = result.getString("email");
                 String Brithdate =  result.getString("brithdate");
-                Week3homework.user User = new user(Username,Password,Gender,Email,Brithdate);
+                user User = new user(Username,Password,Gender,Email,Brithdate);
                 list.add(User);
             }
         }catch (SQLException e){
             e.printStackTrace();
         }
-
-        /*request.setAttribute("list",list);
-        request.getRequestDispatcher("/user.jsp").forward(request,response);*/
-        request.getRequestDispatcher("/login.jsp");
+        request.setAttribute("list",list);
+        request.getRequestDispatcher("/user.jsp").forward(request,response);
     }
 }

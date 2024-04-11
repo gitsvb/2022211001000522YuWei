@@ -80,7 +80,7 @@
 </div>
 
        <div id="container1">
-           <form id="register" action="/2022211001000522YuWei_war_exploded/register" method="post">
+           <form id="register" action="register" method="post">
                <div class="r-input">
                    <label>username</label><br>
                    <input Type="text" name="username"><br>

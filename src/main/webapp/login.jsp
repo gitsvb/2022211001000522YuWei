@@ -81,7 +81,7 @@
     <div class="login-wrapper">
         <div class="header">Login</div>
         <div class="form-wrapper">
-           <form action="/2022211001000522YuWei_war_exploded/login" method="post">
+           <form action="login" method="post">
                <input type="text" name="username" placeholder="username" class="input-item">
                <input type="password" name="password" placeholder="password" class="input-item">
                <input class="submit" Type="submit" name="submit" value="Login in">
