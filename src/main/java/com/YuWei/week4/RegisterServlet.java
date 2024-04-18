@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class RegisterServlet extends HttpServlet{
     Connection con;
     public void init()throws ServletException{
-        ServletContext context = getServletConfig().getServletContext();
+        /*ServletContext context = getServletConfig().getServletContext();
         String drivername = context.getInitParameter("drivername");
         String url = context.getInitParameter("url");
         String username = context.getInitParameter("username");
@@ -31,7 +31,8 @@ public class RegisterServlet extends HttpServlet{
             this.con = con;
         }catch(Exception e){
             e.printStackTrace();
-        }
+        }*/
+        con = (Connection) getServletContext().getAttribute("con");
 
     }
 

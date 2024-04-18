@@ -1,4 +1,4 @@
-<%@ page import="com.YuWei.week4.user" %>
+<%@ page import="com.YuWei.model.User" %>
 <%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: 24825
@@ -25,8 +25,8 @@
         </thead>
         <tbody>
         <%
-            ArrayList<user> list = (ArrayList<user>) request.getAttribute("list");
-            for (user User : list) {
+            ArrayList<User> list = (ArrayList<User>) request.getAttribute("list");
+            for (com.YuWei.model.User User : list) {
         %>
             <tr>
                 <td><%=User.getUsername()%></td>
